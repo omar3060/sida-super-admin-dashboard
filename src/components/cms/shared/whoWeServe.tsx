@@ -15,7 +15,6 @@ import {
   addSlide,
   updateSlide,
   deleteSlide,
-  deleteBrokenSlide,
 } from "../../../services/sharedService/whoWeServeCarouselService";
 
 const WhoWeServeManagement: React.FC = () => {
@@ -61,12 +60,7 @@ const WhoWeServeManagement: React.FC = () => {
     }
   };
 
-  const handleEditClick = () => {
-    if (whoWeServeData) {
-      setEditingWhoWeServe({ ...whoWeServeData });
-      setShowModal(true);
-    }
-  };
+
 
   const handleCloseModal = () => {
     setShowModal(false);
