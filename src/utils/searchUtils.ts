@@ -35,7 +35,9 @@ export const extractAllPages = (sidebarData: any[]): SearchResult[] => {
         item.submenuItems.length > 0
       ) {
         // Find the first submenu item with a link
-        const firstLinkItem = item.submenuItems.find((subItem) => subItem.link);
+        const firstLinkItem = item.submenuItems.find(
+          (subItem: any) => subItem.link
+        );
         if (firstLinkItem) {
           results.push({
             label: item.label,
@@ -53,7 +55,7 @@ export const extractAllPages = (sidebarData: any[]): SearchResult[] => {
   };
 
   // Process each main section
-  sidebarData.forEach((section) => {
+  sidebarData.forEach((section: any) => {
     if (section.submenuItems) {
       section.submenuItems.forEach((item: any) => {
         extractFromItem(item, section.submenuHdr);
