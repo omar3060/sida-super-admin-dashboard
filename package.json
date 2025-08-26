@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "export": "next export",
-    "build": "next build",
+    "build": "npm install --legacy-peer-deps && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -28,7 +28,7 @@
     "clipboard-copy": "^4.0.1",
     "dayjs": "^1.11.13",
     "dragula": "^3.7.3",
-    "feather-icons-react": "^0.8.1",
+    "feather-icons-react": "^0.8.2",
     "i": "^0.3.7",
     "jquery": "^3.7.1",
     "js-cookie": "^3.0.5",
