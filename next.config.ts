@@ -1,5 +1,3 @@
-import path from "path";
-
 const nextConfig = {
   // basePath: "/",
   output: "export",
@@ -8,13 +6,6 @@ const nextConfig = {
   },
   experimental: {
     esmExternals: true,
-  },
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      "@": path.join(__dirname, "src"),
-    };
-    return config;
   },
 };
 
