@@ -1,0 +1,17 @@
+/* Table Row Clickable Styles */
+.table-row-clickable {
+  transition: background-color 0.2s ease;
+}
+
+.table-row-clickable:hover {
+  background-color: rgba(0, 123, 255, 0.1) !important;
+  cursor: pointer;
+}
+
+.table-row-clickable td:first-child {
+  cursor: default;
+}
+
+.table-row-clickable td:first-child:hover {
+  background-color: transparent !important;
+}

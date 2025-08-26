@@ -1,0 +1,149 @@
+// Search Component Styles
+.search-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-results-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 4px;
+}
+
+.search-results-list {
+  padding: 8px 0;
+}
+
+.search-result-item {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #f8f9fa;
+    text-decoration: none;
+    color: #333;
+  }
+
+  &:active {
+    background-color: #e9ecef;
+  }
+}
+
+.search-result-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-result-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  flex-shrink: 0;
+
+  i {
+    font-size: 16px;
+  }
+}
+
+.search-result-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-result-label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+
+.search-result-category {
+  font-size: 12px;
+  color: #6c757d;
+  line-height: 1.3;
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #333;
+    background-color: #f8f9fa;
+  }
+
+  i {
+    font-size: 14px;
+  }
+}
+
+// Loading spinner animation
+.ti-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .search-results-dropdown {
+    max-height: 300px;
+  }
+
+  .search-result-item {
+    padding: 10px 12px;
+  }
+
+  .search-result-content {
+    gap: 8px;
+  }
+
+  .search-result-icon {
+    width: 18px;
+    height: 18px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .search-result-label {
+    font-size: 13px;
+  }
+
+  .search-result-category {
+    font-size: 11px;
+  }
+}
