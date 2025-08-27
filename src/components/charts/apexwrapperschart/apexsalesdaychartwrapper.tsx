@@ -21,7 +21,7 @@ const ApexSalesdayChartWrapper: React.FC = () => {
           show: false,
         },
       },
-      colors: ['#FE9F43', '#FFE3CB'],
+      colors: ['#028ED4', '#45a4d3'],
       responsive: [
         {
           breakpoint: 480,
@@ -63,7 +63,7 @@ const ApexSalesdayChartWrapper: React.FC = () => {
       },
       yaxis: {
         labels: {
-          formatter: (val: any) => `${val}K`,
+          formatter: (val: number) => `${val}K`,
           offsetX: -15,
           style: {
             colors: '#6B7280',

@@ -6,11 +6,17 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { useSearch } from "@/hooks/useSearch";
 import SearchResults from "@/components/search/SearchResults";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const route = all_routes;
   const [flagImage] = useState("assets/img/flags/us-flag.svg");
   const [pathname] = useState(""); // State to store the pathname
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [showSearchResults, setShowSearchResults] = useState(false);
+  const { logout } = useAuth();
+  const router = useRouter();
 
   // Search functionality
   const {
@@ -21,7 +27,6 @@ export default function Header() {
     clearSearch,
   } = useSearch();
 
-  const [showSearchResults, setShowSearchResults] = useState(false);
   const searchRef = useRef<HTMLLIElement>(null);
 
   // Handle click outside search area
@@ -70,8 +75,6 @@ export default function Header() {
   //   setExpandMenus(true);
   //   document.body.classList.add("expand-menu");
   // };
-
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const toggleFullscreen = () => {
     if (!isFullscreen) {
       if (document.documentElement.requestFullscreen) {
@@ -86,6 +89,11 @@ export default function Header() {
         setIsFullscreen(false);
       }
     }
+  };
+
+  const handleLogout = () => {
+    logout();
+    router.push('/signin-3');
   };
 
   return (
@@ -593,10 +601,10 @@ export default function Header() {
                   Settings
                 </Link>
                 <hr className="my-2" />
-                <Link className="dropdown-item logout pb-0" href={route.signin}>
+                <button className="dropdown-item logout pb-0" onClick={handleLogout}>
                   <i className="ti ti-logout me-2" />
                   Logout
-                </Link>
+                </button>
               </div>
             </li>
           </ul>
@@ -618,9 +626,9 @@ export default function Header() {
               <Link className="dropdown-item" href="generalsettings">
                 Settings
               </Link>
-              <Link className="dropdown-item" href="signin">
+              <button className="dropdown-item" onClick={handleLogout}>
                 Logout
-              </Link>
+              </button>
             </div>
           </div>
           {/* /Mobile Menu */}

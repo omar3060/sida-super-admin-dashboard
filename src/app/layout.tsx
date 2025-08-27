@@ -11,6 +11,7 @@ import "../style/icons/fontawesome/css/fontawesome.min.css";
 import "../style/icons/fontawesome/css/all.min.css";
 import "../style/fonts/feather/css/iconfont.css";
 import BootstrapJs from "../components/bootstrap-js/bootstrapjs";
+import { AuthProvider } from "../contexts/AuthContext";
 
 export const metadata = {
   title: "SIDA - Super Admin Dashboard",
@@ -34,10 +35,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
-        <>
+        <AuthProvider>
           <>{children}</>
           <BootstrapJs />
-        </>
+        </AuthProvider>
       </body>
     </html>
   );

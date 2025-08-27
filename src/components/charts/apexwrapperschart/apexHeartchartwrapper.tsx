@@ -1,6 +1,5 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
 import ApexCharts from 'apexcharts';
 import Chart from 'react-apexcharts'; // Ensure this is the correct library for your project
 
@@ -16,8 +15,8 @@ const ApexHeartChartWrapper = () => {
         enableShades: false,
         colorScale: {
           ranges: [
-            { from: 0, to: 99, color: "#FFE3CB" },
-            { from: 100, to: 200, color: "#FE9F43" },
+            { from: 0, to: 99, color: "#45a4d3" },
+            { from: 100, to: 200, color: "#028ED4" },
           ],
         },
       },

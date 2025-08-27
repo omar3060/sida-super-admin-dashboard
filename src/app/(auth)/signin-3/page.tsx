@@ -1,4 +1,4 @@
-import SigninThreeComponent from "@/components/pages/login/signinThree";
+import SigninThreeComponent from "@/app/(auth)/signin-3/signinThree";
 
 export default function Signin3(){
     return(
